@@ -4,7 +4,7 @@
 <div class="dashboard-tlbar d-block mb-5">
     <div class="row">
         <div class="colxl-12 col-lg-12 col-md-12">
-            <h1 class="ft-medium">My Profile</h1>
+            <h1 class="ft-medium">My Profile #{{ $user->identifier}}</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item text-muted"><a href="#">Home</a></li>
@@ -27,7 +27,7 @@
                 </div>
                 
                 <div class="_dashboard_content_body py-3 px-3">
-                    <form class="row">
+                    <form class="row" method="post" action="#">
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
                             <div class="custom-file avater_uploads">
                                 <input type="file" class="custom-file-input" id="customFile">
@@ -39,124 +39,45 @@
                             <div class="row">
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="form-group">
-                                        <label class="text-dark ft-medium">Full Name</label>
-                                        <input type="text" class="form-control rounded" value="Full Name">
+                                        <label class="text-dark ft-medium">First Name</label>
+                                        <input type="text" class="form-control rounded" value="{{ $user->first_name}}" placeholder="First Name">
                                     </div>
                                 </div>
+
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="form-group">
-                                        <label class="text-dark ft-medium">Job Title</label>
-                                        <input type="text" class="form-control rounded" value="Job Name">
+                                        <label class="text-dark ft-medium">Last Name</label>
+                                        <input type="text" class="form-control rounded" value="{{ $user->first_name}}">
                                     </div>
                                 </div>
+
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="form-group">
                                         <label class="text-dark ft-medium">Phone</label>
-                                        <input type="text" class="form-control rounded" value="Phone">
+                                        <input type="text" class="form-control rounded" value="{{ $user->phone }}">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="form-group">
                                         <label class="text-dark ft-medium">Email</label>
-                                        <input type="email" class="form-control rounded" value="uppcl@gmail.com">
+                                        <input type="email" class="form-control rounded" value="{{ $user->phone }}">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6">
                                     <div class="form-group">
-                                        <label class="text-dark ft-medium">Job Type</label>
-                                        <select class="custom-select rounded">
+                                        <label class="text-dark ft-medium">Vendor Type</label>
+                                        <select name="vendor_type" class="custom-select rounded">
                                             <option>Choose Job Type</option>
-                                            <option>Full Time</option>
+                                            <option>Driver</option>
                                             <option>Part Time</option>
-                                            <option>Freelance</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label class="text-dark ft-medium">Job Category</label>
-                                        <select class="custom-select rounded">
-                                            <option>Choose Categories</option>
-                                            <option>IT & Software</option>
-                                            <option>Bank Services</option>
-                                            <option>Hospitals</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label class="text-dark ft-medium">Experience</label>
-                                        <select class="custom-select rounded">
-                                            <option>Select Experience</option>
-                                            <option>Begginer</option>
-                                            <option>01 Years</option>
-                                            <option>02 Years</option>
-                                            <option>03 Years</option>
-                                            <option>04 Years</option>
-                                            <option>05 Years</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label class="text-dark ft-medium">Education</label>
-                                        <input type="text" class="form-control rounded" value="Education">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label class="text-dark ft-medium">Age</label>
-                                        <select class="custom-select rounded">
-                                            <option>20 Years+</option>
-                                            <option>23+ Years</option>
-                                            <option>25+ Years</option>
-                                            <option>30+ Years</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6">
-                                    <div class="form-group">
-                                        <label class="text-dark ft-medium">Language</label>
-                                        <input type="email" class="form-control rounded" value="e.x Englisg, Hindi">
-                                    </div>
-                                </div>
-                                <div class="col-xl-12 col-lg-12">
-                                    <div class="form-group">
-                                        <label class="text-dark ft-medium">About Info</label>
-                                        <textarea class="form-control with-light">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</textarea>
-                                    </div>
-                                </div>
-
-                                <div class="col-xl-6 col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label class="text-dark ft-medium">Country</label>
-                                        <select class="custom-select rounded">
-                                            <option>Australia</option>
-                                            <option>United States</option>
-                                            <option>United Kingdom</option>
-                                            <option>China</option>
-                                            <option>India</option>
-                                            <option>Pakistan</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-12">
-                                    <div class="form-group">
-                                        <label class="text-dark ft-medium">City</label>
-                                        <select class="custom-select rounded">
-                                            <option>Madhya Pradesh</option>
-                                            <option>Punjab</option>
-                                            <option>Uttar Pradesh</option>
-                                            <option>Arudachal</option>
-                                            <option>Nepal</option>
-                                            <option>Afganistan</option>
-                                        </select>
-                                    </div>
-                                </div>
+                                
                                 <div class="col-xl-12 col-lg-12 col-md-12">
                                     <div class="form-group">
                                         <label class="text-dark ft-medium">Full Address</label>
-                                        <input type="password" class="form-control rounded" placeholder="#10 Marke Juger, SBI Road">
+                                        <input type="text" class="form-control rounded" value="{{ $user->address }}" placeholder="#10 Marke Juger, SBI Road">
                                     </div>
                                 </div>
                                 

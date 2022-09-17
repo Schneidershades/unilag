@@ -4,7 +4,7 @@
 <div class="dashboard-tlbar d-block mb-5">
     <div class="row">
         <div class="colxl-12 col-lg-12 col-md-12">
-            <h1 class="ft-medium">Hello, Adam Jesuf</h1>
+            <h1 class="ft-medium">Hello {{$user->first_name ? ", $user->first_name" : ""}}  {{$user->last_name ? "$user->last_name" : ""}}</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item text-muted"><a href="#">Home</a></li>
@@ -19,14 +19,14 @@
     <div class="row">
         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
             <div class="dash-widgets py-5 px-4 bg-info rounded">
-                <h2 class="ft-medium mb-1 fs-xl text-light">46</h2>
-                <p class="p-0 m-0 text-light fs-md">Transaction</p>
+                <h2 class="ft-medium mb-1 fs-xl text-light">{{$user->transactions->count()}}</h2>
+                <p class="p-0 m-0 text-light fs-md">Transactions</p>
                 <i class="lni lni-empty-file"></i>
             </div>
         </div>
         <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
             <div class="dash-widgets py-5 px-4 bg-dark rounded">
-                <h2 class="ft-medium mb-1 fs-xl text-light">87,000</h2>
+                <h2 class="ft-medium mb-1 fs-xl text-light">N {{$user->transactions->sum('total')}}</h2>
                 <p class="p-0 m-0 text-light fs-md">Amount</p>
                 <i class="lni lni-users"></i>
             </div>

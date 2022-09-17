@@ -15,7 +15,13 @@ class HomeController extends Controller
 
     public function login(Request $request)
     {
-        dd('Item');
+        $login = auth()->attempt($request->only('email', 'password'));
+
+        if(!$login){
+            return redirect()->back();
+        }
+
+        return view('dashboard.home')->with('user',  auth()->user());
     }
 
     public function register(Request $request)
