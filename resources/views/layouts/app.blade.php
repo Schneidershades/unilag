@@ -9,6 +9,7 @@
 		 
         <!-- Custom CSS -->
         <link href="assets/css/styles.css" rel="stylesheet">
+        <link href="assets/css/plugins/lobibox.min.css" rel="stylesheet">
 		
     </head>
 	
@@ -43,9 +44,55 @@
 		<script src="assets/js/snackbar.min.js"></script>
 		<script src="assets/js/jQuery.style.switcher.js"></script>
 		<script src="assets/js/custom.js"></script>
+		<script src="assets/js/custom.js"></script>
+		<script src="assets/js/custom.js"></script>
+		<script src="assets/js/lobibox.min.js"></script>
+		<script src="assets/js/notifications.min.js"></script>
 		<!-- ============================================================== -->
 		<!-- This page plugins -->
 		<!-- ============================================================== -->		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				@if(Session::has('success'))
+					function info_noti(){
+						Lobibox.notify('success', {
+							pauseDelayOnHover: true,
+							continueDelayOnInactiveTab: false,
+							size: 'mini',
+							position: 'top right',
+							icon: 'fa fa-info-circle',
+							msg: '{{ Session::get("success") }}'
+						});
+					} 
+				@endif
+
+				@if(Session::has('info'))
+					function info_noti(){
+						Lobibox.notify('info', {
+							pauseDelayOnHover: true,
+							continueDelayOnInactiveTab: false,
+							size: 'mini',
+							position: 'top right',
+							icon: 'fa fa-info-circle',
+							msg: '{{ Session::get("info") }}'
+						});
+					} 
+				@endif
+
+				@if(Session::has('danger'))
+					function info_noti(){
+						Lobibox.notify('danger', {
+							pauseDelayOnHover: true,
+							continueDelayOnInactiveTab: false,
+							size: 'mini',
+							position: 'top right',
+							icon: 'fa fa-info-circle',
+							msg: '{{ Session::get("danger") }}'
+						});
+					} 
+				@endif
+        	});
+		</script>
 
 	</body>
 

@@ -27,23 +27,18 @@
                 </div>
                 
                 <div class="_dashboard_content_body py-3 px-3">
-                    <form class="row">
+                    <form class="row" method="post" action="/password">
+                        @csrf
                         <div class="col-xl-8 col-lg-9 col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label class="text-dark ft-medium">Old Password</label>
-                                <input type="text" class="form-control rounded" placeholder="">
+                                <input type="text" class="form-control rounded" name="current_password" placeholder="">
                             </div>
                         </div>
                         <div class="col-xl-8 col-lg-9 col-md-12 col-sm-12">
                             <div class="form-group">
                                 <label class="text-dark ft-medium">New Password</label>
-                                <input type="text" class="form-control rounded" placeholder="">
-                            </div>
-                        </div>
-                        <div class="col-xl-8 col-lg-9 col-md-12 col-sm-12">
-                            <div class="form-group">
-                                <label class="text-dark ft-medium">Confirm Password</label>
-                                <input type="text" class="form-control rounded" placeholder="">
+                                <input type="text" class="form-control rounded" name="password" placeholder="">
                             </div>
                         </div>
                         <div class="col-xl-12 col-lg-12">
@@ -51,7 +46,6 @@
                                 <button type="submit" class="btn btn-md ft-medium text-light rounded theme-bg">Save Changes</button>
                             </div>
                         </div>
-                        
                     </form>
                 </div>
             </div>
