@@ -6,9 +6,8 @@
         <div class="dashboard-inner">
             <ul data-submenu-title="Main Navigation">
                 <li class="active"><a href="{{route('dashboard')}}"><i class="lni lni-dashboard mr-2"></i>Dashboard</a></li>
-                <li><a href="/payments"><i class="lni lni-add-files mr-2"></i>Payments</a></li>
+                <li><a href="/payments"><i class="lni lni-add-files mr-2"></i>Due Payments</a></li>
                 <li><a href="/transactions"><i class="lni lni-files mr-2"></i>History</a></li>
-                <li><a href="/transactions"><i class="lni lni-files mr-2"></i>Dues</a></li>
             </ul>
             <ul data-submenu-title="My Accounts">
                 <li><a href="{{route('profile')}}"><i class="lni lni-user mr-2"></i>My Profile </a></li>

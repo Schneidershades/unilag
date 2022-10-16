@@ -27,7 +27,7 @@
                                 <th scope="col">Sr. No.</th>
                                 <th scope="col">Transaction id</th>
                                 <th scope="col">Title</th>
-                                <th scope="col">Expired</th>
+                                <th scope="col">Period</th>
                                 <th scope="col">Status</th>
                             </tr>
                         </thead>
@@ -38,7 +38,7 @@
                                 <td>#{{$payment->id}}</td>
                                 <td><a href="javascript:void(0);" class="theme-cl">{{$payment->title}}</a></td>
                                 <td>{{$payment->period}}</td>
-                                <td><span class="theme-cl">{{$payment->transactions->where('user_id', auth()->user->id)->first() ? 'paid' : 'pending'}}</span></td>
+                                <td><span class="theme-cl">{{$payment->transactions->where('user_id', $user->id)->first() ? 'paid' : 'pending'}}</span></td>
                             </tr>
                             @endforeach
                         </tbody>

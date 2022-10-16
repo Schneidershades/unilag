@@ -9,6 +9,8 @@ class PaymentController extends Controller
 {
     public function index()
     {
-        return view('dashboard.payments')->with('payments',  Payment::all());
+        return view('dashboard.payments')
+            ->with('payments',  Payment::all())
+            ->with('user',  auth()->user());
     }
 }

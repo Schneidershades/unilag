@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->string('identifier')->unique();
             $table->string('title')->nullable();
             $table->string('details')->nullable();
             $table->float('subtotal')->default(0);
