@@ -5,12 +5,15 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\PasswordController;
+use App\Http\Controllers\Dashboard\PaymentController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/payments', [PaymentController::class, 'index'])->name('payment');
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 

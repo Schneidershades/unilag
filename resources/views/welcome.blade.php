@@ -350,9 +350,28 @@
 				</div>
 				
 				<form action="/register-user" method="post">
-					@csrf				
+					@csrf	
+
 					<div class="form-group">
-						<label>User Name</label>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="vendor_type" id="flexRadioDefault1" checked>
+							<label class="form-check-label" for="flexRadioDefault1">Vendor</label>
+							<input class="form-check-input" type="radio" name="vendor_type" id="flexRadioDefault2">
+							<label class="form-check-label" for="flexRadioDefault2">Driver</label>
+						</div>
+					</div>	
+					
+					<div class="form-group">
+						<label>First Name</label>
+						<input type="text" class="form-control" name="first_name" placeholder="First Name *">
+					</div>				
+					<div class="form-group">
+						<label>Last Name</label>
+						<input type="text" class="form-control" name="last_name" placeholder="Last Name *">
+					</div>
+
+					<div class="form-group">
+						<label>Email</label>
 						<input type="text" class="form-control" name="email" placeholder="Email *">
 					</div>
 					

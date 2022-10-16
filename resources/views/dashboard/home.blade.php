@@ -4,7 +4,7 @@
 <div class="dashboard-tlbar d-block mb-5">
     <div class="row">
         <div class="colxl-12 col-lg-12 col-md-12">
-            <h1 class="ft-medium">Hello {{$user->first_name ? ", $user->first_name" : ""}}  {{$user->last_name ? "$user->last_name" : ""}}</h1>
+            <h1 class="ft-medium">Hello {{$user->first_name ?? $user->first_name}}  {{$user->last_name ?? $user->last_name }}</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item text-muted"><a href="#">Home</a></li>
@@ -47,7 +47,7 @@
         </div>
     </div>
     
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-lg-6 col-md-12">
             <div class="dashboard-gravity-list with-icons">
                 <h4 class="mb-0 ft-medium">Recent News</h4>
@@ -170,6 +170,6 @@
                 </ul>
             </div>
         </div>	
-    </div>	
+    </div>	 -->
 </div>
 @endsection

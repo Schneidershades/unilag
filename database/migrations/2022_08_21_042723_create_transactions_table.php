@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('details')->nullable();
+            $table->uuid('payment_id')->nullable()->constrained('transactions')->cascadeOnUpdate()->nullOnDelete();
             $table->uuid('parent_id')->nullable()->constrained('transactions')->cascadeOnUpdate()->nullOnDelete();
             $table->uuid('payment_gateway_id')->nullable()->constrained('payment_gateways')->cascadeOnUpdate()->nullOnDelete(); 
             $table->string('transactionable_type')->nullable();
