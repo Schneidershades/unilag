@@ -14,7 +14,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-Route::get('/payments', [PaymentController::class, 'index'])->name('payment');
+Route::get('/payments', [PaymentController::class, 'index'])->name('payments');
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
