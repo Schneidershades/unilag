@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,7 @@ class HomeController extends Controller
         $login = auth()->attempt($request->only('email', 'password'));
 
         if(!$login){
+            Session::flash('error', 'wrong email or password');
             return redirect()->back();
         }
 

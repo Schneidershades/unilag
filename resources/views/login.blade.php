@@ -66,17 +66,54 @@
 
 <!-- ======================= Home Banner ======================== -->
 <div class="home-banner margin-bottom-0" style="background:#f6f7f9;">
-	<div class="container">
+	<div class="container mt-4">
 		
-		<div class="row align-items-center justify-content-between">
-			<div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12">
+		<div class="row align-items-center justify-content-between ">
+			<div class="col-xl-6 col-lg-5 col-md-6 col-sm-12 col-12">
+            
 				<div class="banner_caption text-left mb-4">
 					<div class="d-block mb-2"><span class="px-3 py-1 medium bg-light-danger text-danger rounded">Unilag Vendpay</span></div>
-					<h1 class="banner_title ft-bold mb-1">Explore a <br><span class="text-danger">20x</span> Transaction Automation</h1>
-					<p class="fs-md ft-regular">A faster way to pay your vendorship dues</p>
+					<p class="fs-md ft-regular">Login to your account</p>
+
+                    @if(Session::get("error"))
+					<div class="d-block mb-2"><span class="px-3 py-1 medium bg-light-danger text-danger rounded">{{ Session::get("error") }}</span></div>
+                    @endif
+                    
+                    <form action="/login-user" method="post" class="mr-4">
+                        @csrf				
+                        <div class="form-group">
+                            <label>User Name</label>
+                            <input type="text" class="form-control" name="email" placeholder="Email *">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="password" placeholder="Password*">
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="flex-1">
+                                    <input id="dd" class="checkbox-custom" name="dd" type="checkbox">
+                                    <label for="dd" class="checkbox-custom-label">Remember Me</label>
+                                </div>	
+                                <div class="eltio_k2">
+                                    <a href="#" class="text-danger">Lost Your Password?</a>
+                                </div>	
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-md full-width bg-danger text-light fs-md ft-medium">Login</button>
+                        </div>
+                        
+                        <div class="form-group text-center mb-0">
+                            <p class="extra">Not a member?<a href="#et-register-wrap" class="text-dark"> Register</a></p>
+                        </div>
+                    </form>
 				</div>
 			</div>
-			<div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+			<div class="col-xl-6 col-lg-5 col-md-6 col-sm-12 col-12">
 				<div class="bnr_thumb">
 					<img src="assets/img/bn-1.png" class="img-fluid bnr_img" alt="" />
 				</div>
@@ -85,43 +122,6 @@
 	</div>
 </div>
 <!-- ======================= Home Banner ======================== -->
-
-<!-- ======================= Newsletter Start ============================ -->
-<section class="space bg-cover" style="background:#ea2b33 url(assets/img/landing-bg.png) no-repeat;">
-	<div class="container py-5">
-		
-		<div class="row justify-content-center">
-			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-				<div class="sec_title position-relative text-center mb-5">
-					<h6 class="text-light mb-0">Subscribe Now</h6>
-					<h2 class="ft-bold text-light">Get All Updates</h2>
-				</div>
-			</div>
-		</div>
-		
-		<div class="row align-items-center justify-content-center">
-			<div class="col-xl-7 col-lg-10 col-md-12 col-sm-12 col-12">
-				<form class="bg-white rounded p-1">
-					<div class="row no-gutters">
-						<div class="col-xl-9 col-lg-9 col-md-8 col-sm-8 col-8">
-							<div class="form-group mb-0 position-relative">
-								<input type="text" class="form-control lg left-ico" placeholder="Enter Your Email Address">
-								<i class="bnc-ico lni lni-envelope"></i>
-							</div>
-						</div>
-						<div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-4">
-							<div class="form-group mb-0 position-relative">
-								<button class="btn full-width custom-height-lg bg-dark text-white fs-md" type="button">Subscribe</button>
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-		
-	</div>
-</section>
-<!-- ======================= Newsletter Start ============================ -->
 
 
 <!-- ============================ Footer Start ================================== -->
@@ -135,10 +135,10 @@
 						<img src="assets/img/logo-red.png" class="img-footer small mb-2" alt="" />
 						
 						<div class="address mt-2">
-							3298 Grant Street Longview, New Texox<br>United Kingdom 75601	
+							University of Lagos <br> Akoka Lagos Nigeria	
 						</div>
 						<div class="address mt-3">
-							1-202-555-0106<br>support@workplex.com
+							+234934949443<br>info@unilag.edu
 						</div>
 						<div class="address mt-2">
 							<ul class="list-inline">
